@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Webmatrix Form Validator</title>
+	<link rel="stylesheet" type="text/css" href="../validator.css">
+	
+</head>
+<body>
+<form id="myform">
+	<label>Text Validation</label><br>
+	<input type="text" name="" required="true"><br/><br/>
+
+	<label>Email Validation</label><br/>
+	<input type="email" name="" required="true"><br/><br/>
+
+	<label>Date Validation</label><br/>
+	<input type="date" name="" required="true" data-min="2018-01-01" data-max="2018-12-31"><br/><br/>
+
+	<label>Telephone(tel) Validation</label><br/>
+	<input type="tel" name="" required="true"><br/><br/>
+
+	<label>Number Validation</label><br/>
+	<input type="number" name="" required="true"><br/><br/>
+
+	<label>Data minimum and maximum value (minimum value is 20)</label><br/>
+	<textarea type="text" rows="6" required="true" data-min="20" data-max="100" data-count="#count"></textarea><br/><br/>
+	<div><span id="count">0</span> out of 100</div><br/>
+
+	<input type="button" id="validate-btn" value="Validate">
+</form>
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script type="text/javascript" src="../validator.js"></script>
+<script type="text/javascript">
+	$("#validate-btn").click(function(e){
+		var status = $().matrixV("#myform");
+		if(status){
+			alert("Form is good to go");
+		}
+		else{
+			$("#myform").addClass("form-error");
+			setTimeout(function(){
+				$("#myform").removeClass("form-error");
+			}, 1000);
+		}
+	});
+</script>
+</body>
+</html>

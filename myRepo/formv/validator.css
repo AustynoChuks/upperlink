@@ -1,0 +1,23 @@
+.red {border:1px solid red !important;}
+#myform {
+	width: 500px;
+	max-width: 100%;
+	margin:0 auto;
+}
+
+input {
+	min-height:30px;
+}
+input, textarea {
+	width: 100%;
+	border-radius:5px;
+}
+.input-lg {min-height: 50px}
+.form-error {animation: dd ease-in-out .5s 1;}
+@keyframes dd{
+  0% {transform:rotateY(0deg); }
+  25% {transform:rotateY(-10deg); }
+  50% {transform:rotateY(10deg);}
+  75% {transform:rotateY(-10deg); }
+  100% {transform:rotateY(0deg);}
+}
